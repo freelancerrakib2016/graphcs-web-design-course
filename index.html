@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>freelancer-rakib-hasan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#111827;
+  --text:#ffffff;
+  --muted:#a1a1aa;
+  --accent:#7c3aed;
+  --accent2:#22d3ee;
+}
+
+body.light{
+  --bg:#f4f7ff;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#6d28d9;
+  --accent2:#0891b2;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:0.4s;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(15px);
+  background:rgba(0,0,0,0.3);
+}
+
+body.light header{
+  background:rgba(255,255,255,0.7);
+}
+
+.brand{
+  font-weight:700;
+  font-size:16px;
+  opacity:0.9;
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+nav{
+  display:flex;
+  gap:18px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+
+.toggle{
+  cursor:pointer;
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+.hero h1{
+  font-size:48px;
+  background:linear-gradient(90deg,var(--text),var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin-top:12px;
+  color:var(--muted);
+  max-width:600px;
+  margin:auto;
+  line-height:1.6;
+}
+
+/* COURSES */
+.courses{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
+  padding:50px 40px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:30px;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+}
+
+body.light .card{
+  border:1px solid #e5e7eb;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.badge{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  padding:5px 10px;
+  font-size:12px;
+  border-radius:20px;
+  color:white;
+}
+
+.card h2{
+  margin-top:10px;
+}
+
+.card p{
+  margin-top:10px;
+  color:var(--muted);
+}
+
+.price{
+  margin-top:15px;
+  font-size:26px;
+  font-weight:800;
+  color:var(--accent2);
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:white;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  background:rgba(0,0,0,0.5);
+}
+
+body.light footer{
+  background:white;
+}
+
+.bottom{
+  color:var(--muted);
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">freelancer-rakib-hasan</div>
+
+  <div class="right">
+    <nav>
+      <a href="#" onclick="openLink('https://freelancerrakib2016.github.io/freelancerrakibhasan/')">Home</a>
+      <a href="#" onclick="openLink('https://freelancerrakib2016.github.io/freelancerrakibhasan/')">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Learn Creative Skills</h1>
+  <p>Become a professional designer with Graphics & Web Design courses built for real-world success.</p>
+</section>
+
+<section class="courses">
+
+  <div class="card" onclick="openLink('https://freelancerrakib2016.github.io/Graphics-Design--home-pages/?fbclid=IwY2xjawSCNdBleHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe5bG7DnfXgrpFC8ZUBmzv7-gE2lZEq0-R1Ih-2WP5hLVTVJB5n088BhTqg_s_aem_CpnIbq93T_AQ8npOkxjV2w')">
+    <span class="badge">Popular</span>
+    <h2>Graphics Design Course</h2>
+    <p>Photoshop, Illustrator, Branding, Logo Design & more.</p>
+    <div class="price">৳500</div>
+    <a class="btn">Enroll Now</a>
+  </div>
+
+  <div class="card" onclick="openLink('#')">
+    <span class="badge">Trending</span>
+    <h2>Web Design Course</h2>
+    <p>HTML, CSS, UI/UX, Responsive Web Design & Projects.</p>
+    <div class="price">৳500</div>
+    <a class="btn">Enroll Now</a>
+  </div>
+
+</section>
+
+<footer>
+  <div class="bottom">
+    Thanks for everyone | freelancer-rakib-hasan
+  </div>
+</footer>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle('light');
+}
+
+function openLink(url){
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
