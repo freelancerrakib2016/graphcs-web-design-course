@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>freelancer-rakib-hasan</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -22,8 +22,6 @@ body.light{
   --card:#ffffff;
   --text:#0f172a;
   --muted:#475569;
-  --accent:#6d28d9;
-  --accent2:#0891b2;
 }
 
 *{
@@ -44,32 +42,27 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 40px;
+  padding:16px 50px;
   position:sticky;
   top:0;
+  background:rgba(0,0,0,0.35);
   backdrop-filter:blur(15px);
-  background:rgba(0,0,0,0.3);
 }
 
 body.light header{
-  background:rgba(255,255,255,0.7);
+  background:rgba(255,255,255,0.8);
 }
 
 .brand{
   font-weight:700;
-  font-size:16px;
-  opacity:0.9;
-}
-
-.right{
-  display:flex;
-  align-items:center;
-  gap:20px;
+  font-size:18px;
 }
 
 nav{
   display:flex;
   gap:18px;
+  margin-left:auto;
+  margin-right:40px;
 }
 
 nav a{
@@ -79,64 +72,139 @@ nav a{
 }
 
 .toggle{
-  cursor:pointer;
-  padding:8px 12px;
-  border-radius:8px;
   border:1px solid #ccc;
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
 }
 
 /* HERO */
 .hero{
-  text-align:center;
-  padding:80px 20px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:80px 60px;
+  gap:40px;
 }
 
-.hero h1{
-  font-size:48px;
-  background:linear-gradient(90deg,var(--text),var(--accent),var(--accent2));
+.hero-left{
+  max-width:550px;
+}
+
+.hero-left h1{
+  font-size:52px;
+  line-height:1.25;
+  background:linear-gradient(90deg,#fff,var(--accent),var(--accent2));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-  margin-top:12px;
+.hero-left p{
+  margin-top:15px;
   color:var(--muted);
-  max-width:600px;
-  margin:auto;
   line-height:1.6;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* COUNTER */
+.counter-box{
+  margin-top:20px;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  display:inline-block;
+}
+
+.counter{
+  font-size:28px;
+  font-weight:800;
+  color:var(--accent2);
+}
+
+/* HERO RIGHT */
+.hero-right{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.flip-card{
+  width:150px;
+  height:110px;
+  position:relative;
+}
+
+.flip-inner{
+  position:absolute;
+  width:100%;
+  height:100%;
+  transition:0.7s;
+  transform-style:preserve-3d;
+}
+
+.flip-card:hover .flip-inner{
+  transform:rotateY(180deg);
+}
+
+.flip-front, .flip-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  border:1px solid rgba(255,255,255,0.1);
+  background:var(--card);
+}
+
+.flip-back{
+  transform:rotateY(180deg);
+  color:var(--muted);
+  font-size:12px;
 }
 
 /* COURSES */
 .courses{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:25px;
-  padding:50px 40px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  padding:60px;
 }
 
 .card{
   background:var(--card);
-  border-radius:18px;
   padding:30px;
-  cursor:pointer;
+  border-radius:18px;
   border:1px solid rgba(255,255,255,0.08);
-  transition:0.4s;
-}
-
-body.light .card{
-  border:1px solid #e5e7eb;
+  transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .badge{
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  padding:5px 10px;
-  font-size:12px;
+  display:inline-block;
+  padding:5px 12px;
   border-radius:20px;
-  color:white;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  font-size:12px;
+  margin-bottom:10px;
 }
 
 .card h2{
@@ -144,7 +212,7 @@ body.light .card{
 }
 
 .card p{
-  margin-top:10px;
+  margin-top:8px;
   color:var(--muted);
 }
 
@@ -155,30 +223,44 @@ body.light .card{
   color:var(--accent2);
 }
 
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 18px;
-  border-radius:10px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  color:white;
+/* FOOTER */
+footer{
+  background:#0a0f1c;
+  padding:70px 60px;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+  gap:40px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.footer-grid h3{
+  margin-bottom:12px;
+}
+
+.footer-grid a{
+  display:block;
+  color:var(--muted);
+  margin:8px 0;
   text-decoration:none;
 }
 
-/* FOOTER */
-footer{
+.footer-bottom{
   text-align:center;
-  padding:40px;
-  background:rgba(0,0,0,0.5);
-}
-
-body.light footer{
-  background:white;
-}
-
-.bottom{
+  margin-top:50px;
   color:var(--muted);
-  font-size:14px;
+  font-size:13px;
+}
+
+/* MOBILE */
+@media (max-width: 1024px){
+  .hero{flex-direction:column;text-align:center;}
+  header{flex-direction:column;gap:10px;}
+  nav{margin:0;flex-wrap:wrap;justify-content:center;}
 }
 </style>
 </head>
@@ -188,56 +270,127 @@ body.light footer{
 <header>
   <div class="brand">freelancer-rakib-hasan</div>
 
-  <div class="right">
-    <nav>
-      <a href="#" onclick="openLink('https://freelancerrakib2016.github.io/freelancerrakibhasan/')">Home</a>
-      <a href="#" onclick="openLink('https://freelancerrakib2016.github.io/freelancerrakibhasan/')">About</a>
-      <a href="#">Contact</a>
-    </nav>
+  <nav>
+    <a href="#">Home</a>
 
-    <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
-  </div>
+    <a href="https://freelancerrakib2016.github.io/freelancerrakibhasan/" target="_blank">About</a>
+
+    <!-- ✅ FIXED FACEBOOK PAGE LINK -->
+    <a href="https://www.facebook.com/profile.php?id=61589180354803" target="_blank">
+      Contact
+    </a>
+  </nav>
+
+  <div class="toggle" onclick="document.body.classList.toggle('light')">🌙 / ☀️</div>
 </header>
 
 <section class="hero">
-  <h1>Learn Creative Skills</h1>
-  <p>Become a professional designer with Graphics & Web Design courses built for real-world success.</p>
+
+  <div class="hero-left">
+
+    <h1>Learn Creative Skills & Build Your Future</h1>
+
+    <p>Become a professional designer with Graphics & Web Design courses.</p>
+
+    <a class="btn" target="_blank"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSe3cVfFkmPuzcNscHaHS3913-PSBFfd9HJtechu3jusp0MyqA/viewform">
+       Start Learning
+    </a>
+
+    <div class="counter-box">
+      👨‍🎓 Live Students<br>
+      <span class="counter" id="counter">0</span>+
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front">💳 bKash</div><div class="flip-back">Instant Payment</div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front">💰 Nagad</div><div class="flip-back">Fast Banking</div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front">👤 Personal</div><div class="flip-back">Send Money</div></div></div>
+    <div class="flip-card"><div class="flip-inner"><div class="flip-front">🏧 Cash Out</div><div class="flip-back">Withdraw Anytime</div></div></div>
+  </div>
+
 </section>
 
 <section class="courses">
 
-  <div class="card" onclick="openLink('https://freelancerrakib2016.github.io/Graphics-Design--home-pages/?fbclid=IwY2xjawSCNdBleHRuA2FlbQIxMABzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe5bG7DnfXgrpFC8ZUBmzv7-gE2lZEq0-R1Ih-2WP5hLVTVJB5n088BhTqg_s_aem_CpnIbq93T_AQ8npOkxjV2w')">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe3cVfFkmPuzcNscHaHS3913-PSBFfd9HJtechu3jusp0MyqA/viewform" target="_blank" style="text-decoration:none;color:inherit;">
+  <div class="card">
     <span class="badge">Popular</span>
-    <h2>Graphics Design Course</h2>
-    <p>Photoshop, Illustrator, Branding, Logo Design & more.</p>
+    <h2>Graphics Design</h2>
+    <p>Photoshop, Illustrator, Branding</p>
     <div class="price">৳500</div>
-    <a class="btn">Enroll Now</a>
   </div>
+</a>
 
-  <div class="card" onclick="openLink('#')">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe3cVfFkmPuzcNscHaHS3913-PSBFfd9HJtechu3jusp0MyqA/viewform" target="_blank" style="text-decoration:none;color:inherit;">
+  <div class="card">
     <span class="badge">Trending</span>
-    <h2>Web Design Course</h2>
-    <p>HTML, CSS, UI/UX, Responsive Web Design & Projects.</p>
+    <h2>Web Design</h2>
+    <p>HTML, CSS, UI/UX</p>
     <div class="price">৳500</div>
-    <a class="btn">Enroll Now</a>
   </div>
+</a>
 
 </section>
 
 <footer>
-  <div class="bottom">
-    Thanks for everyone | freelancer-rakib-hasan
+
+<div class="footer-grid">
+
+  <div>
+    <h3>About Platform</h3>
+    <p style="color:var(--muted);line-height:1.6;">
+      Professional learning platform for Graphics Design & Web Development.
+    </p>
   </div>
+
+  <div>
+    <h3>Courses</h3>
+    <a href="#">Graphics Design</a>
+    <a href="#">Web Design</a>
+  </div>
+
+  <div>
+    <h3>Support</h3>
+    <a href="https://www.facebook.com/profile.php?id=61589180354803" target="_blank">Contact Support</a>
+  </div>
+
+  <div>
+    <h3>Company</h3>
+    <a href="#">About</a>
+    <a href="#">Privacy</a>
+  </div>
+
+  <div>
+    <h3>Social</h3>
+    <a href="https://facebook.com" target="_blank">Facebook</a>
+    <a href="https://github.com" target="_blank">GitHub</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+  </div>
+
+</div>
+
+<div class="footer-bottom">
+  Thanks For Everyone
+</div>
+
 </footer>
 
 <script>
-function toggleMode(){
-  document.body.classList.toggle('light');
-}
+let count = 0;
+let target = 1280;
 
-function openLink(url){
-  window.open(url, "_blank");
-}
+let speed = setInterval(()=>{
+  count += 10;
+  document.getElementById("counter").innerText = count;
+
+  if(count >= target){
+    document.getElementById("counter").innerText = target;
+    clearInterval(speed);
+  }
+}, 20);
 </script>
 
 </body>
