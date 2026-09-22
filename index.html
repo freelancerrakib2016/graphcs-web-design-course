@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>freelancer-rakib-hasan</title>
+<title>Freelancer Rakib Hasan</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -180,9 +180,14 @@ nav a{
 /* COURSES */
 .courses{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(2,minmax(280px,1fr));
   gap:30px;
-  padding:60px;
+  padding:40px;
+  margin:60px;
+  border:2px solid rgba(34,211,238,0.55);
+  border-radius:24px;
+  background:rgba(255,255,255,0.025);
+  box-shadow:0 0 30px rgba(34,211,238,0.08);
 }
 
 .card{
@@ -261,6 +266,11 @@ footer{
   .hero{flex-direction:column;text-align:center;}
   header{flex-direction:column;gap:10px;}
   nav{margin:0;flex-wrap:wrap;justify-content:center;}
+  .courses{margin:30px 20px;padding:25px;}
+}
+
+@media (max-width: 650px){
+  .courses{grid-template-columns:1fr;margin:20px 12px;padding:18px;}
 }
 </style>
 </head>
@@ -268,7 +278,7 @@ footer{
 <body>
 
 <header>
-  <div class="brand">freelancer-rakib-hasan</div>
+  <div class="brand">Freelancer Rakib Hasan</div>
 
   <nav>
     <a href="#">Home</a>
@@ -320,7 +330,7 @@ footer{
     <span class="badge">Popular</span>
     <h2>Graphics Design</h2>
     <p>Photoshop, Illustrator, Branding</p>
-    <div class="price">৳500</div>
+    <div class="price">৳30,000</div>
   </div>
 </a>
 
@@ -329,7 +339,25 @@ footer{
     <span class="badge">Trending</span>
     <h2>Web Design</h2>
     <p>HTML, CSS, UI/UX</p>
-    <div class="price">৳500</div>
+    <div class="price">৳30,000</div>
+  </div>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe3cVfFkmPuzcNscHaHS3913-PSBFfd9HJtechu3jusp0MyqA/viewform" target="_blank" style="text-decoration:none;color:inherit;">
+  <div class="card">
+    <span class="badge">New</span>
+    <h2>PHP Programming</h2>
+    <p>Backend Language • Server-Side Programming</p>
+    <div class="price">৳15,000</div>
+  </div>
+</a>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe3cVfFkmPuzcNscHaHS3913-PSBFfd9HJtechu3jusp0MyqA/viewform" target="_blank" style="text-decoration:none;color:inherit;">
+  <div class="card">
+    <span class="badge">New</span>
+    <h2>Ethical Hacking</h2>
+    <p>Ethical Hacking</p>
+    <div class="price">৳30,000</div>
   </div>
 </a>
 
@@ -350,6 +378,10 @@ footer{
     <h3>Courses</h3>
     <a href="#">Graphics Design</a>
     <a href="#">Web Design</a>
+    <a href="#">PHP Programming</a>
+    <a href="#">Ethical Hacking</a>
+    <a href="#">PHP Programming</a>
+    <a href="#">Ethical Hacking</a>
   </div>
 
   <div>
@@ -373,7 +405,7 @@ footer{
 </div>
 
 <div class="footer-bottom">
-  Thanks For Everyone
+  
 </div>
 
 </footer>
